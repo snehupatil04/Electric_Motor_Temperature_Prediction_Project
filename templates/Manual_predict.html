@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manual Prediction</title>
+</head>
+<body>
+    <h2>Manual Input Prediction</h2>
+    <form method="POST" action="/predict_manual">
+        {% for name in feature_names %}
+            <label>{{ name }}:</label>
+            <input type="number" step="any" name="{{ name }}" required><br><br>
+        {% endfor %}
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
